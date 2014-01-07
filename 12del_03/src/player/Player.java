@@ -29,7 +29,19 @@ public class Player {
 		laboramount=laboramount+1; 
 		return laboramount;
 	}
-
+	//tælleren til antallet af runder i jail
+	public int getJailcount(){
+		return jailcount;
+	}
+	public int updatejailcount(){
+		jailcount=jailcount+1; 
+		return jailcount;
+	}
+	public int restartjailcount(){
+		jailcount=0; 
+		return jailcount;
+	}
+	
 	public Account getPlayerAcc() {
 
 		return balance;
