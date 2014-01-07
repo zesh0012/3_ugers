@@ -1,13 +1,45 @@
 package Player 
 
-public class Jail {
+public class Jail extends Field {
 
+	private int bailamount;
+	TUI tui = new TUI();
+	Dicecup diceCup = new Dicecup();
 
+	public Jail (int bailAmount) {
+		this.bailamount=bailAmount; 
+	}
 
-
-
-
-
-
-
+   
+   public void landOnField(Player player,int fieldnum,Field field)
+   {
+   if(player.getJailcount()<3 || fieldnum==11){
+	 
+	 if(bailamount==1000){
+		 if(GUI.getUserLeftButtonPressed(tui.PayorRoll(), "1000", "Roll dice")==true){
+				player.getPlayerAcc().withdrawMoney(bailamount);
+				GUI.setBalance(player.getPlayerName(), player.getPlayerAcc().getBalance());
+				player.restartjailcount(); 
+			}
+		 else { 
+			 diceCup.roll();
+			 if(diceCup.getfacevalue1() == diceCup.getfacevalue2()){
+			     player.restartjailcount(); 
+			     }
+			 else{
+				 player.updatejailcount();
+			 }
+			 
+	  }
+	 }
+  }
 }
+   
+   
+	public void releaseFields(Player player) {
+		// TODO Auto-generated method stub	
+	}
+	
+	
+}
+
