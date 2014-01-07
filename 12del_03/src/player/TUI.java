@@ -188,4 +188,8 @@ public class TUI {
 		result = "Roll dice";
 		return result;
 	}
+	public String PayorRoll(){
+		result = "do you want to pay 1000 or roll the dice";
+		return result;
+	}
 }
