@@ -29,6 +29,20 @@ public class Dicecup {
 		return sum;
 
 	}
+	public int getfacevalue1() {
+		
+		facevalue1 = faceValue1;
+		
+		return facevalue1;
+	}
+	
+	public int getfacevalue2() {
+		
+		facevalue2 = faceValue2; 
+		
+		return facevalue2;
+		
+	}
 
 
 	// n�dvendig toString metode, for at kunne se output p� sk�rmen. ellers
